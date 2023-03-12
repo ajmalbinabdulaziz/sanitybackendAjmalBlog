@@ -1,4 +1,4 @@
-import {defineType, defineArrayMember} from 'sanity'
+import {defineType, defineArrayMember, defineField} from 'sanity'
 
 /**
  * This is the schema definition for the rich text fields used for
@@ -28,6 +28,7 @@ export default defineType({
         {title: 'H2', value: 'h2'},
         {title: 'H3', value: 'h3'},
         {title: 'H4', value: 'h4'},
+        {title: "Code", value: "code" },
         {title: 'Quote', value: 'blockquote'},
       ],
       lists: [{title: 'Bullet', value: 'bullet'}],
@@ -38,6 +39,7 @@ export default defineType({
         decorators: [
           {title: 'Strong', value: 'strong'},
           {title: 'Emphasis', value: 'em'},
+
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
@@ -51,6 +53,20 @@ export default defineType({
                 name: 'href',
                 type: 'url',
               },
+              defineField({
+                type: 'code',
+                name: 'myCodeField',
+                title: 'Code with all options',
+                options: {
+                  language: 'javascript',
+                  languageAlternatives: [
+                    {title: 'Javascript', value: 'javascript'},
+                    {title: 'HTML', value: 'html'},
+                    {title: 'CSS', value: 'css'},
+                  ],
+                  withFilename: true,
+                },
+              })
             ],
           },
         ],
@@ -63,5 +79,8 @@ export default defineType({
       type: 'image',
       options: {hotspot: true},
     }),
+    defineArrayMember({
+        type: 'code',
+    })
   ],
 })
