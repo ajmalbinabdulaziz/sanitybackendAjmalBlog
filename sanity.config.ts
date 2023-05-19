@@ -11,7 +11,7 @@ export default defineConfig({
   projectId: '0oap7xl7',
   dataset: 'production',
 
-  plugins: [deskTool(), visionTool(), codeInput()],
+  plugins: [deskTool(), visionTool(), codeInput(),],
 
   schema: {
     types: schemaTypes,

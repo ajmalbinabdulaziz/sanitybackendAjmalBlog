@@ -11,11 +11,23 @@ export default defineType({
       type: 'text',
     }),
     defineField({
-        name: 'user',
-        title: 'User',
-        type: 'reference',
-        to: {type: 'user'},
-      }),
+      name: 'user',
+      title: 'User',
+      type: 'string',
+    }),
+    defineField({
+      name: 'email',
+      title: 'Email',
+      type: 'email',
+    }),
+    defineField({
+      name: 'userImage',
+      title: 'User image',
+      type: 'string',
+      // options: {
+      //   hotspot: true,
+      // },
+    }),
     defineField({
       name: 'post',
       title: 'Post',
@@ -26,11 +38,12 @@ export default defineType({
       name: 'parentId',
       title: 'Parent ID',
       type: 'reference',
+      weak: true,
       to: {type: 'comment'},
       initialValue: undefined,
     }),
     defineField({
-      name: 'publishedAt',
+      name: 'publishedAt', 
       title: 'Published at',
       type: 'datetime',
     }),
@@ -38,8 +51,8 @@ export default defineType({
 
   preview: {
     select: {
-      title: 'user',
-      subtitle: 'message',
+      title: 'message',
+      subtitle: 'user',
     },
   },
 
