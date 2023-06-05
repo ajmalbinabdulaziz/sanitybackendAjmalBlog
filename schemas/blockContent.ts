@@ -39,10 +39,10 @@ export default defineType({
         // preference or highlighting by editors.
         decorators: [
           {title: 'Strong', value: 'strong'},
-        {title: 'Code', value: 'code'},
-        {title: 'Emphasis', value: 'em'},
-        {title: "Underline", value: "underline" },
-        {title: "Strike", value: "strike-through" }
+          // {title: 'Code', value: 'code'},
+          {title: 'Emphasis', value: 'em'},
+          {title: "Underline", value: "underline" },
+          {title: "Strike", value: "strike-through" }
 
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
@@ -83,8 +83,8 @@ export default defineType({
       type: 'image',
       options: {hotspot: true},
     }),
-    // defineArrayMember({
-    //   type: 'code',
-    // }),
+    defineArrayMember({
+      type: 'code',
+    }),
   ],
 })
