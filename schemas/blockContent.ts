@@ -30,7 +30,8 @@ export default defineType({
         {title: 'H4', value: 'h4'},
         {title: 'small', value: 'sm'},
         {title: 'extra-small', value: 'xs'},
-        {title: 'Quote', value: 'blockquote'},
+        {title: 'Block Quote', value: 'blockquote'},
+        {title: 'Code Quote', value: 'codequote'},
       ],
       lists: [{title: 'Bullet', value: 'bullet'}],
       // Marks let you mark up inline text in the block editor.
